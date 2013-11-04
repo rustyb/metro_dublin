@@ -1,4 +1,6 @@
 baseurl: /metro_dublin
 name: Metro Dublin Project
-markdown: redcarpet
+markdown: rdiscount
 pygments: true
+permalinks: /:title
+relative_permalinks: false

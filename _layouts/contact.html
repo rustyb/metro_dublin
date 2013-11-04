@@ -1,0 +1,62 @@
+{% include html_head.html %}
+
+<!-- Main Content Section -->
+<header style="overflow:hidden; background:#fff;margin-bottom:1em;">
+	<div class="photo" style="float:left; width:60%; background: url(http://www.metrodublin.ie/index_files/image481.png) no-repeat;min-height:726px; ">
+		<div class="large-6 columns" style="padding-left:10em;">
+			<h1><a href="{{site.baseurl}}"><img class="logo" src="{{site.baseurl}}/img/MetroDublin.png" style="max-height:40px;z-index:100;"/></a></h1>
+		</div>
+	</div>
+	<div class="text" style="width:40%; float:right;">
+		<div class="b" style="padding-top:75px; margin-left:2em;padding-right:3em;">
+			<h1 class="case" style="font-size: 12px;text-transform: uppercase;">Metro Dublin</h1>
+			<h1 class="sub" style="font-size: 28px;letter-spacing: -2px;">Get in touch</h1>
+			<h2 class="sub" style="font-size: 22px;letter-spacing: -1px;font-weight:normal;">Metro Dublin welcomes all suggestions which could help develop a better integrated transportation network for Dublin</h2>
+			<hr style="border-top:5px solid #f5ebe6;margin-top:3em;" />
+		<div class="row">
+			<div class="section-container tabs" data-section>
+				        <section class="section">
+				          <h5 class="title"><a href="#panel1">Contact Our Company</a></h5>
+				          <div class="content" data-slug="panel1">
+				            <form>
+				              <div class="row collapse">
+				                <div class="large-2 columns">
+				                  <label class="inline">Your Name</label>
+				                </div>
+				                <div class="large-10 columns">
+				                  <input type="text" id="yourName" placeholder="Jane Smith">
+				                </div>
+				              </div>
+				              <div class="row collapse">
+				                <div class="large-2 columns">
+				                  <label class="inline"> Your Email</label>
+				                </div>
+				                <div class="large-10 columns">
+				                  <input type="text" id="yourEmail" placeholder="jane@smithco.com">
+				                </div>
+				              </div>
+				              <label>Your Message</label>
+				              <textarea rows="10"></textarea>
+				              <button type="submit" class="radius button">Submit</button>
+				            </form>
+				          </div>
+				        </section>
+				        <section class="section">
+				          <h5 class="title"><a href="#panel2">Direct Email</a></h5>
+				          <div class="content" data-slug="panel2">
+				            <ul class="large-block-grid-5">
+				              <li><a href="mailto:info@dublinmetro.ie"><img src="{{site.baseurl}}/img/MetroDublin.png">Dublin Metro</a></li>
+				              
+				            </ul>
+				          </div>
+				        </section>
+				      </div>
+				    </div>
+
+			</div>
+		</div>
+	
+	</div>	
+</header>
+{% include footer.html %}
+{% include html_end.html %}
