@@ -1,19 +1,11 @@
 {% include html_head.html %}
-<!--<div class="row prose">
-		<div class="small-12 large-9 large-centered columns">
-			<div class="large-12 columns">
-				{{content}}
-			</div>
-		</div>
-	{% assign group_nav = page.group %}
-	{% include sidebar.html %}
-</div>-->
+
 
 <!-- Main Content Section -->
 <header style="overflow:hidden; background:#fff;margin-bottom:1em;">
 	<div class="photo" style="float:left; width:60%; background: url(http://www.metrodublin.ie/index_files/image481.png) no-repeat;min-height:726px; ">
 		<div class="large-6 columns" style="padding-left:10em;">
-			<h1><a href="{{site.baseurl}}">	<img class="logo" src="{{site.baseurl}}/img/MetroDublin.png" style="max-height:40px;"/></a></h1>
+			<h1><a href="{{site.baseurl}}">	<img class="logo" src="{{site.baseurl}}/img/MetroDublin.png" style="max-height:40px;"/></a></h1>			
 		</div>
 	</div>
 	<div class="text" style="width:40%; float:right;">
@@ -33,7 +25,78 @@
 	</div>
 	
 </header>
-  <div class="row" >
+<div class="row" >
+    <div class="large-9 columns">
+      	<div id='map'></div>
+		<p>&nbsp;</p>
+    </div>
+        <div class="large-3 columns">
+			<div id="legend">
+				<div class='my-legend'>
+				<h4>Dublin Rail Services</h4>
+				<div class='legend-scale'>
+				  <ul class='legend-labels'>
+				    <li><span style='border-color:#FF00FF;'></span><strong>M1</strong> - Blanchardstown - Docklands - St. Stephen's Green</li>
+				    <li><span style='border-color:#0000FF;'></span><strong>M2</strong> - Malahide - Swords - Airport - Ballymun - Heuston - St. Stephen's Green</li>
+				    <li><span style='border-color:#FF0000;'></span><strong>M3</strong> - Adamstown -Heuston - St. Stephen's Green - Docklands</li>
+				    <li><span style='border-color:#EB9535;'></span><strong>D1</strong> - Malahide/Howth - Connolly - Pearse - Greystones</li>
+				    <li><span style='border-color:#DE1122;'></span><strong>Red Luas</strong> - Sagart/Tallaght - Heuston - Connolly/The Point</li>
+				    <li><span style='border-color:#019431;'></span><strong>Green Luas</strong> - Brides Glen - St Stephens Green - O'Connell/Marlborough - Broombridge</li>
+				  </ul>
+				</div>
+				</div>
+
+				<style type='text/css'>
+				  .my-legend .legend-title {
+				    text-align: left;
+				    margin-bottom: 5px;
+				    font-weight: bold;
+				    font-size: 90%;
+				    }
+				  .my-legend .legend-scale ul {
+				    margin: 0;
+				    margin-bottom: 5px;
+				    padding: 0;
+				    float: left;
+				    list-style: none;
+				    }
+				  .my-legend .legend-scale ul li {
+				    font-size: 80%;
+				    list-style: none;
+				    margin-left: 0;
+				    line-height: 18px;
+				    margin-bottom: 2px;
+					border-bottom:1px solid #ccc;
+					padding:5px 0;
+				    }
+				  .my-legend ul.legend-labels li span {
+				    display: block;
+				    float: left;
+				    height: 2px;
+				    margin-top:7px;
+				    margin-bottom:2px;
+				    width: 30px;
+				    margin-right: 5px;
+				    margin-left: 0;
+				    border-left: 0px solid #999;
+				    border-right: 0px solid #999;
+				    border-top: 3px solid #999;
+				    border-bottom: 3px solid #999;
+				    background:#FFF;
+				    }
+				  .my-legend .legend-source {
+				    font-size: 70%;
+				    color: #999;
+				    clear: both;
+				    }
+				  .my-legend a {
+				    color: #777;
+				    }
+				</style>
+			</div>
+	    </div>
+  </div>
+  <div class="row" style="border-top:5px solid #f5ebe6;padding-top:3em;margin-top:3em;">
     <div class="large-5 columns">
       <h4 id="about">Metro Dublin</h4>
       <p>Is the plan to build a new metro that includes &amp; extends both Metro North &amp; DART Underground.</p>
@@ -43,9 +106,10 @@
     </div>
     
     <div class="large-7 columns">
-    
+	
       <!-- Gallery sidebar with a block grid. Note: block grid items should be the same size for optimal results -->
       <a href="http://www.metrodublin.ie/index_files/image481.png"><img src="http://www.metrodublin.ie/index_files/image481.png"></a>
+
     </div>
         
   </div>
@@ -175,7 +239,15 @@
   </div>
   
   <!-- Call to Action Panel -->
-
+<script>
+  var map = L.mapbox.map('map', 'ebow.map-hsqi45u0,rusty.gep9034e',{legendControl: false,shareControl:true})
+    .setView([53.3476,-6.2533], 14);
+	map.legendControl.removeLegend()
+	L.control.attribution().addAttribution('Information Copyright <a href="http://www.dublinmetro.ie">Dublin Metro</a>').addTo(map);
+	
+    map.addControl(L.mapbox.geocoderControl('rusty.gep9034e'))
+	
+</script>
 {% include footer.html %}
 {% include html_end.html %}
 
