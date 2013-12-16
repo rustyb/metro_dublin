@@ -1,0 +1,66 @@
+---
+layout: map
+title:  "Dublin Metro - Interactive Map"
+categories: map, updates
+permalink: test
+---
+<div id="map"></div>
+
+
+<style type='text/css'>
+  .my-legend .legend-title {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 90%;
+    }
+  .my-legend .legend-scale ul {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    float: left;
+    list-style: none;
+    }
+  .my-legend .legend-scale ul li {
+    font-size: 80%;
+    list-style: none;
+    margin-left: 0;
+    line-height: 18px;
+    margin-bottom: 2px;
+	border-bottom:1px solid #ccc;
+	padding:5px 0;
+    }
+  .my-legend ul.legend-labels li span {
+    display: block;
+    float: left;
+    height: 2px;
+    margin-top:7px;
+    margin-bottom:2px;
+    width: 30px;
+    margin-right: 5px;
+    margin-left: 0;
+    border-left: 0px solid #999;
+    border-right: 0px solid #999;
+    border-top: 3px solid #999;
+    border-bottom: 3px solid #999;
+    background:#FFF;
+    }
+  .my-legend .legend-source {
+    font-size: 70%;
+    color: #999;
+    clear: both;
+    }
+  .my-legend a {
+    color: #777;
+    }
+</style>
+
+<script>
+  var map = L.mapbox.map('map', 'ebow.map-hsqi45u0,rusty.gep9034e',{legendControl: false,shareControl:true, minZoom:10,maxZoom:16})
+    .setView([53.3476,-6.2533], 14);
+	map.legendControl.removeLegend()
+	L.control.attribution().addAttribution('Information Copyright <a href="http://www.dublinmetro.ie">Dublin Metro</a>').addTo(map);
+	
+    map.addControl(L.mapbox.geocoderControl('rusty.gep9034e'))
+	
+</script>
