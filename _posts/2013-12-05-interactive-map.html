@@ -80,6 +80,7 @@ permalink: map
 <script>
   var map = L.mapbox.map('map', 'ebow.map-hsqi45u0,rusty.gep9034e',{legendControl: false,shareControl:true, minZoom:10,maxZoom:16})
     .setView([53.3476,-6.2533], 14);
+    .setMaxBounds([53.0825,-6.5341,53.5003,-5.9491]);
 	map.legendControl.removeLegend()
 	L.control.attribution().addAttribution('Information Copyright <a href="http://www.dublinmetro.ie">Dublin Metro</a>').addTo(map);
 	
